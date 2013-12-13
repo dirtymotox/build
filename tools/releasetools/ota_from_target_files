@@ -455,16 +455,15 @@ def WriteFullOTAPackage(input_zip, output_zip):
     script.Print("Formatting /data")
     script.FormatPartition("/data")
 
-  script.Print("#######################################");
-  script.Print("# _____            __  __  ______     #");
-  script.Print("#/\  __`\  /'\_/`\/\ \/\ \/\__  _\    #");
-  script.Print("#\ \ \/\ \/\  ``  \ \ ` \ \/_/\ \/    #");
-  script.Print("# \ \ \ \ \ \ \__\ \ \ . ` \ \ \ \    #");
-  script.Print("#  \ \ \_\ \ \ \_/\ \ \ \`\ \ \_\ \__ #");
-  script.Print("#   \ \_____\ \_\, \_\ \_\ \_\/\_____\#");
-  script.Print("#    \/_____/\/_/ \/_/\/_/\/_/\/_____/#");
-  script.Print("#                                     #");
-  script.Print("#######################################");
+  script.Print("==============================================");
+  script.Print("|                 Team D.I.R.T               |");
+  script.Print("|               PROUDLY PRESENTS             |");
+  script.Print("|                                            |");
+  script.Print("|            --  DIRTY UNICORNS --           |");
+  script.Print("|                                            |");
+  script.Print("|         SPECIAL THANKS TO OMNI-ROM         |");
+  script.Print("|     full credits are shown in rom thread   |");
+  script.Print("==============================================");
 
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
@@ -502,7 +501,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.WriteRawImage("/boot", "boot.img")
 
   script.ShowProgress(0.1, 0)
-  script.Print("Enjoy OMNI ROM!");
+  script.Print("Have fun with DU!");
   device_specific.FullOTA_InstallEnd()
 
   if OPTIONS.extra_script is not None:
