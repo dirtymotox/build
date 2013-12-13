@@ -25,7 +25,6 @@ PRODUCT_PACKAGES := \
 	FusedLocation \
 	Gallery \
 	Keyguard \
-	Music \
 	Mms \
 	OpenWnn \
 	PrintSpooler \
@@ -52,7 +51,6 @@ PRODUCT_PACKAGES := \
 	ApiDemos \
 	GestureBuilder \
 	CubeLiveWallpapers \
-	QuickSearchBox \
 	WidgetPreview \
 	librs_jni \
 	ConnectivityTest \
