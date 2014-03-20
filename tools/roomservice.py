@@ -51,7 +51,7 @@ except:
     device = product
 
 if not depsonly:
-    print("Device %s not found. Attempting to retrieve device repository from Dirty Unicorns Github (http://github.com/DirtyUnicorns-KitKat)." % device)
+    print("Device %s not found. Attempting to retrieve device repository from Dirty Unicorns Github (http://github.com/dirtymotox)." % device)
 
 repositories = []
 
@@ -71,7 +71,7 @@ def add_auth(githubreq):
 
 page = 1
 while not depsonly:
-    githubreq = urllib.request.Request("https://api.github.com/users/DirtyUnicorns-KitKat/repos?per_page=200&page=%d" % page)
+    githubreq = urllib.request.Request("https://api.github.com/users/dirtymotox/repos?per_page=200&page=%d" % page)
     add_auth(githubreq)
     result = json.loads(urllib.request.urlopen(githubreq).read().decode())
     if len(result) == 0:
@@ -173,10 +173,10 @@ def add_to_manifest(repositories, fallback_branch = None):
             print('Dirty Unicorns/%s already exists' % (repo_name))
             continue
 
-        print('Adding dependency: DirtyUnicorns-KitKat/%s -> %s' % (repo_name, repo_target))
+        print('Adding dependency: dirtymotox/%s -> %s' % (repo_name, repo_target))
         project = ElementTree.Element("project", attrib = { "path": repo_target,
             "remote": "du", "revision": "du44", "name": repo_name })
-           ## "remote": "github", "name": "DirtyUnicorns-KitKat/%s" % repo_name })
+           ## "remote": "github", "name": "dirtymotox/%s" % repo_name })
 
         if 'branch' in repository:
             project.set('revision',repository['branch'])
@@ -207,7 +207,7 @@ def fetch_dependencies(repo_path, fallback_branch = None):
         fetch_list = []
 
         for dependency in dependencies:
-            if not is_in_manifest("DirtyUnicorns-KitKat/%s" % dependency['repository']):
+            if not is_in_manifest("dirtymotox/%s" % dependency['repository']):
                 fetch_list.append(dependency)
                 syncable_repos.append(dependency['target_path'])
 
